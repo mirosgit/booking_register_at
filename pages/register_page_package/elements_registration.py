@@ -1,4 +1,4 @@
-from ..locators_package import RegisterFormLocators
+from locators_package import RegisterFormLocators
 
 
 class FindElements:
