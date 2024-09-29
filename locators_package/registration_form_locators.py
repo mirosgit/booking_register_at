@@ -13,6 +13,5 @@ class RegisterFormLocators:
     continue_password_button = (By.CSS_SELECTOR, "button[type='submit']")
     new_password_error_icon = (By.CSS_SELECTOR, "form > div > div:nth-child(1) > div > div > div > div > div:nth-child(3) > span > svg")
     confirm_password_error_icon = (By.CSS_SELECTOR, "form > div > div:nth-child(2) > div > div > div > div > div:nth-child(3) > span > svg")
-    # new_password_error_note = (By.CSS_SELECTOR, "")
-    # confirm_password_error_note = (By.CSS_SELECTOR, "")
+    new_password_error_note = (By.CSS_SELECTOR, "div[id='new_password-note']")
 
