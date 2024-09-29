@@ -1,5 +1,3 @@
-# config_reader.py
-
 from openpyxl import load_workbook
 
 
