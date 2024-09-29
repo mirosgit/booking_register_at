@@ -22,7 +22,7 @@ class TestUserRegistration:
         self.booking_page = UserRegistration(self.browser, self.link_booking_page)
         self.booking_page.open()
         self.open_browser_full_screen()
-        self.booking_page.go_to_email_page()
+        self.booking_page.pre_condition_id_2()
 
     def open_browser_full_screen(self):
         self.browser.maximize_window()
@@ -34,5 +34,5 @@ class TestUserRegistration:
     def test_case_id_2_run(self):
         parsed_url = urlparse(self.browser.current_url)
         url_without_params = f"{parsed_url.scheme}://{parsed_url.netloc}{parsed_url.path}"
-        expected_url = "https://account.booking.com/sign-in"
+        expected_url = "https://account.booking.com/register/password"
         assert url_without_params == expected_url, f"TEST CASE ID 2: FAIL. Expected URL: {expected_url}, but got: {url_without_params}"

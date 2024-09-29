@@ -18,3 +18,8 @@ class UserRegistrationWait:
         wait = WebDriverWait(self.browser, timeout)
         return wait.until(EC.element_to_be_clickable(self.register_page_element.email_field),
                               "Could not find Email Field")
+
+    def wait_password_field(self, timeout=30):
+        wait = WebDriverWait(self.browser, timeout)
+        return wait.until(EC.element_to_be_clickable(self.register_page_element.new_password_field),
+                              "Could not find Password Field")
