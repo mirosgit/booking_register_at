@@ -1,5 +1,6 @@
 import time
 from .register_page_package import FindElements, UserRegistrationWait
+from .register_page_package import FakeDynamicData
 from .base_page import BasePage
 from faker import Faker
 
@@ -11,10 +12,18 @@ class UserRegistration(BasePage):
         super().__init__(browser, url)
         self.find_elements_register_form = FindElements(browser=self.browser, url=self.url)
         self.wait_until_register_form = UserRegistrationWait(browser=self.browser, url=self.url)
+        self.fake_dynamic_data = FakeDynamicData()
 
-    def go_to_email_page(self):
-        """ Test case to interact with the registration form """
+    def pre_condition_id_2(self):
         self.wait_until_register_form.wait_register_button()
         self.find_elements_register_form.register_button().click()
+        self.wait_until_register_form.wait_email_field()
 
-        # time.sleep(10)
+    def pre_condition_id_3(self):
+        self.wait_until_register_form.wait_register_button()
+        self.find_elements_register_form.register_button().click()
+        self.wait_until_register_form.wait_email_field()
+        self.find_elements_register_form.email_field().send_keys(self.fake_dynamic_data.generate_random_email())
+        self.find_elements_register_form.continue_email_button().click()
+        self.wait_until_register_form.wait_password_field()
+

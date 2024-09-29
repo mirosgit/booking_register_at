@@ -28,10 +28,10 @@ class FindElements:
         return self.find_element(self.register_locators.email_error_note)
 
     def new_password_filed(self):
-        return self.find_element(self.register_locators.new_password_filed)
+        return self.find_element(self.register_locators.new_password_field)
 
     def confirm_password_filed(self):
-        return self.find_element(self.register_locators.confirm_password_filed)
+        return self.find_element(self.register_locators.confirm_password_field)
 
     def continue_password_button(self):
         return self.find_element(self.register_locators.continue_password_button)
